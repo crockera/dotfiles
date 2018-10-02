@@ -1,0 +1,49 @@
+""  
+""  ~/.vim/vimrc
+""  
+
+"" vim-plug
+call plug#begin('~/.vim/plugged')
+
+" make sure to use single quotes
+" inside of the vim-plug section
+
+" sensible vim default settings
+Plug 'tpope/vim-sensible'
+
+" on-demand loading
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
+
+call plug#end()
+
+
+
+" turn on syntax highlighting
+syntax on
+syntax enable
+
+set backupdir=/tmp	" save backup files (~) to /tmp
+set modelines=0		" security
+
+set tabstop=4		" visual spaces per tab
+set softtabstop=4	" spaces in tab on edit
+set expandtab		" tabs are spaces
+filetype indent on	" load filetype specific indent files
+filetype on		" enable file type detection
+
+
+set number relativenumber	" hybrid line numbers
+set showcmd			" show command in bottom bar
+set cursorline			" highlight current line
+set wildmenu			" visual autocomplete for command menu
+set lazyredraw			" redraw only when we need to
+
+
+set incsearch			" search as characters are entered
+set hlsearch			" highlight matches
+
+set ruler		" show ruler
+
+set encoding=utf-8	" encoding
+
