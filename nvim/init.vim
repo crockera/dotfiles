@@ -1,74 +1,78 @@
-"" ################################################################
-""   Name	 :  init.vim
-""   Description :  neovim configuration file
-""   Path	 :  ${HOME}/.config/nvim/init.vim
-""   Author	 :  crockera
-""   Email	 :  alexcrocker128@gmail.com
-"" ################################################################
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" __   _(_)_ __ ___  _ __ ___
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__
+"   \_/ |_|_| |_| |_|_|  \___|
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimrc - vim configuration file
+"
+" Maintainer:
+" 	Alex Crocker
+"
+" Repository:
+" 	https://github.com/crockera
+"
+" Version: 29/12/18 23:43:00
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-"" **************************** "
-""      Auto-Load Vim-Plug      "
-"" **************************** "
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-plug
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" automatically install vim-plug if missing
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+	silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
 		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/bundle')
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" specify vim-plug plugin directory
+call plug#begin('~/.local/share/nvim/plugged')
+
+" plugins
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'vimwiki/vimwiki'
+
+" initialize plugin system
 call plug#end()
 
 
-"" -------------------- "
-"" theming settings "
-"" -------------------- "
-colorscheme onehalfdark
-let g:airline_theme = 'onehalfdark'
-
-
-
-
-"" **************************** "
-""       General Settings       "
-"" **************************** "
-
-" enable syntax highlighting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible	" depricated with nvim
+filetype plugin on
 syntax on
-
-" enable true colors
-if exists('+termguicolors')
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-	set termguicolors
-endif
-
-" highlight the current line
-set cursorline
-
-" allow backspacing over autoindent, line breaks, and insert start
-set backspace=indent,eol,start
-
-" maintain the indent position of the previous line; enabled when
-" no other filetype specific indenting is enabled
-set autoindent
-
-" display the cursor position on the last line of the screen or in
-" the status line of the window
-set ruler
-
-" display line numbers; relative to assist with movement
+set encoding=utf-8
 set number relativenumber
-set laststatus=2
+set showcmd
+set wildmenu			" sow command autocompletion menu
+set incsearch			" search as characters are entered
+set hlsearch			" highlight matches
+set ruler			" show ruler
 
-" window switching command remapping
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" disable automatic commenting on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" splits and split navigation
+set splitbelow splitright
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" remove trailing whitespace on write
+autocmd BufWritePre * %s/\s\+$//e
+
+" merge xrdb on config update
+autocmd BufWritePost ~/.Xresources,~/.Xdefauluts !xrdb %
+
+" default tab spacing
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 
