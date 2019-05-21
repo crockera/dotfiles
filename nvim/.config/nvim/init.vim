@@ -73,8 +73,27 @@ set cmdheight=1
 " =========================================================================== "
 
 " Wrap in try/catch to avoid error on before plugin is available
-try
-endtry
+
+" ============================================= "
+"                   NERDTree                    "
+" ============================================= "
+try " NERDTree settings
+
+  " Show hidden files/directories
+  let g:NERDTreeShowHidden = 1
+
+  " Remove bookmarks and help text from NERDTree
+  let g:NERDTreeMinimalUI = 1
+
+  " Custom icons for expandable/expanded directories
+  let g:NERDTreeDirArrowExpandable = '⬏'
+  let g:NERDTreeDirArrowCollapsible = '⬎'
+
+  " Hide certain files and directories from NERDTree
+  let g:NERDTreeIgnore = [ '^\.DS_Store$', '^tags$', 
+        \ '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$' ]
+
+endtry " NERDTree settings
 
 
 " ============================================================================ "
@@ -86,6 +105,51 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
+
+" ============================================================================ "
+" ===                                 UI                                   === "
+" ============================================================================ "
+
+" Enable true color support
+set termguicolors
+
+" Editor theme
+set background=dark
+
+" Colorscheme
+try
+  colorscheme onehalfdark
+  "colorscheme challenger_deep
+  "colorscheme PaperColor
+catch
+  colorscheme slate
+endtry
+
+" Change vertical split character to the space character (hide it)
+set fillchars+=vert:.
+
+" Set preview window to appear at bottom
+set splitbelow
+
+" ============================================================================ "
+" ===                            KEY MAPPINGS                              === "
+" ============================================================================ "
+
+" ============================================= "
+"              NERDTree shortcuts               "
+" ============================================= "
+"   <leader>n - Toggle NERDTree on/off
+"   <leader>f - Opens current file location in NERDTree
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
+
+" ============================================= "
+"         Page navigation shortcuts             "
+" ============================================= "
+"   <Space> - PageDown
+"   -       - PageUp
+noremap <Space> <PageDown>
+noremap - <PageUp>
 
 " ============================================================================ "
 " ===                                MISC.                                 === "
