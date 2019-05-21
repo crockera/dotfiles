@@ -5,5 +5,9 @@
 # ls
 
 
+# apt
+alias aptfu='sudo apt update && sudo apt upgrade'
+
+
 
 
