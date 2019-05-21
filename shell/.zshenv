@@ -9,6 +9,7 @@
 # ---------------------------------------------------------
 export LANG="en_US.UTF-8"
 export ARCHFLAGS="-arch x86_64"
+export EDITOR="nvim"
 
 # ---------------------------------------------------------
 # PATH Configuration
