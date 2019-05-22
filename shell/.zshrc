@@ -5,7 +5,7 @@
 export ZSH="/home/acrocker/.oh-my-zsh"
 
 # Shell theme
-ZSH_THEME="gentoo"
+ZSH_THEME="robbyrussell"
 
 # TMUX - Automatically start tmux
 #ZSH_TMUX_AUTOSTART="true"
