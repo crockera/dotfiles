@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation
-export ZSH="/home/acrocker/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Shell theme
 ZSH_THEME="robbyrussell"
@@ -37,7 +37,7 @@ if [[ -f "$HOME/.aliasrc" ]]; then
 fi
 
 # Add directory to fpath
-fpath=($fpath "/home/acrocker/.zfunctions")
+fpath=($fpath "$HOME/.zfunctions")
 
 # Set Spaceship ZSH as a prompt
 #autoload -U promptinit; promptinit
