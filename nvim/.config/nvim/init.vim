@@ -176,6 +176,11 @@ set backupdir=~/.local/share/nvim/backup
 set backup
 set noswapfile
 
+" If the desired backup directory (above) doesn't exist, create it
+if empty(glob('~/.local/share/nvim/backup'))
+	!mkdir ~/.local/share/nvim/backup
+endif
+
 " Reload icons after init source
 if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
