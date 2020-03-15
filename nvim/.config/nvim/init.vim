@@ -95,6 +95,13 @@ try " NERDTree settings
 
 endtry " NERDTree settings
 
+" ============================================= "
+"                    VimWiki                    "
+" ============================================= "
+try " VimWiki settings
+  let g:vimwiki_list = [{'path': '~/usr/vimwiki/',
+        \ 'syntax': 'markdown', 'ext': '.md'}]
+endtry " VimWiki settings
 
 " ============================================================================ "
 " ===                            KEY MAPPINGS                              === "
