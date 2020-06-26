@@ -45,16 +45,16 @@ fi
 # ---------------------------------------------------------
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# ---------------------------------------------------------
-# Global NPM Location Configuration
-# ---------------------------------------------------------
-export NPM_CONFIG_PREFIX="$HOME/.npm-global"
-export PATH="$HOME/.npm-global/bin:$PATH"
+## ---------------------------------------------------------
+## Global NPM Location Configuration
+## ---------------------------------------------------------
+#export NPM_CONFIG_PREFIX="$HOME/.npm-global"
+#export PATH="$HOME/.npm-global/bin:$PATH"
 
-# ---------------------------------------------------------
-# ranger file manager - skip loading default config file
-# ---------------------------------------------------------
-export RANGER_LOAD_DEFAULT_RC="FALSE"
+## ---------------------------------------------------------
+## ranger file manager - skip loading default config file
+## ---------------------------------------------------------
+#export RANGER_LOAD_DEFAULT_RC="FALSE"
 
 # ---------------------------------------------------------
 # kitty (terminal) - command completion setup
