@@ -5,7 +5,8 @@
 export ZSH="/home/acrocker/.oh-my-zsh"
 
 # Shell/prompt theme
-ZSH_THEME="frisk"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="af-magic"
 
 # Use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
